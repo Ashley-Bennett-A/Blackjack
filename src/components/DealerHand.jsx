@@ -15,17 +15,12 @@ class DealerHand extends React.Component {
       //   console.log(this.props.hand[0].image);
       return (
         <div className="hand">
-          <Card card={this.props.hand[0]} />;
+          <Card card={this.props.hand[0]} />
         </div>
       );
     }
 
-    return (
-      <div>
-        <h1>Dealer's Hand</h1>
-        <div className="hand" />
-      </div>
-    );
+    return <div className="hand" />;
   }
 }
 
