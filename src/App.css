@@ -1,4 +1,8 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap");
+
 body {
+  user-select: none;
+  font-family: "DM Serif Text", serif;
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#006e2e+0,006e2e+100;Green+Flat+%233 */
   background: #006e2e; /* Old browsers */
   background: -moz-radial-gradient(
@@ -28,10 +32,11 @@ body {
 
 .chip {
   border: black 1px solid;
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  line-height: 50px;
+  line-height: 70px;
+  font-size: 24pt;
 }
 
 .white {
@@ -60,8 +65,58 @@ body {
   justify-content: space-evenly;
 }
 
+.balance {
+  line-height: 50px;
+  height: 50px;
+  width: 200px;
+  background: -webkit-radial-gradient(
+        0% 100%,
+        circle,
+        transparent 15%,
+        #fed024 15%
+      )
+      no-repeat,
+    -webkit-radial-gradient(100% 0%, circle, transparent 15%, #fed024 15%) no-repeat,
+    -webkit-radial-gradient(0% 0%, circle, transparent 15%, #fed024 15%) no-repeat,
+    -webkit-radial-gradient(100% 100%, circle, transparent 15%, #fed024 15%) no-repeat;
+  background: radial-gradient(circle at 0% 100%, transparent 15%, #fed024 15%)
+      no-repeat,
+    radial-gradient(circle at 100% 0%, transparent 15%, #fed024 15%) no-repeat,
+    radial-gradient(circle at 0% 0%, transparent 15%, #fed024 15%) no-repeat,
+    radial-gradient(circle at 100% 100%, transparent 15%, #fed024 15%) no-repeat;
+  background-position: 0% 100%, 100% 0%, 0% 0%, 100% 100%;
+  background-size: 50% 50%;
+}
+
+.stake {
+  line-height: 50px;
+  height: 50px;
+  width: 200px;
+  background: -webkit-radial-gradient(
+        0% 100%,
+        circle,
+        transparent 15%,
+        #fed024 15%
+      )
+      no-repeat,
+    -webkit-radial-gradient(100% 0%, circle, transparent 15%, #fed024 15%) no-repeat,
+    -webkit-radial-gradient(0% 0%, circle, transparent 15%, #fed024 15%) no-repeat,
+    -webkit-radial-gradient(100% 100%, circle, transparent 15%, #fed024 15%) no-repeat;
+  background: radial-gradient(circle at 0% 100%, transparent 15%, #fed024 15%)
+      no-repeat,
+    radial-gradient(circle at 100% 0%, transparent 15%, #fed024 15%) no-repeat,
+    radial-gradient(circle at 0% 0%, transparent 15%, #fed024 15%) no-repeat,
+    radial-gradient(circle at 100% 100%, transparent 15%, #fed024 15%) no-repeat;
+  background-position: 0% 100%, 100% 0%, 0% 0%, 100% 100%;
+  background-size: 50% 50%;
+}
+
 .App {
   text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .hand {
@@ -70,10 +125,83 @@ body {
 }
 
 .card img {
-  height: 200px;
+  height: 170px;
   width: auto;
+  animation: deal 1s reverse;
+}
+
+@keyframes deal {
+  0% {
+    transform: translate(0vw, 0vh) rotatey(0deg);
+  }
+  100% {
+    transform: translate(40vw, -10vh) rotatey(180deg);
+  }
 }
 
 .hand {
-  height: 200px;
+  height: 170px;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+}
+
+.options div {
+  border: 2px black solid;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background: lightgreen;
+}
+
+.deal {
+  display: flex;
+  justify-content: center;
+}
+
+.deal div {
+  border: 2px black solid;
+  margin: 5px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+}
+
+.mid-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.greenDeal {
+  background: green;
+}
+
+.greenDeal:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.redDeal {
+  background: red;
+}
+
+.instructions {
+  height: 50px;
+}
+
+.deck {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.deck img {
+  height: 170px;
+  width: auto;
+  transform: rotatez(50deg);
 }

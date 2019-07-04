@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./Card";
+import backCard from "./images/playing_card_back_png_1044088.png";
 
 class DealerHand extends React.Component {
   render() {
@@ -12,10 +13,12 @@ class DealerHand extends React.Component {
         </div>
       );
     } else if (this.props.hand.length > 0) {
-      //   console.log(this.props.hand[0].image);
       return (
         <div className="hand">
           <Card card={this.props.hand[0]} />
+          <div className="card">
+            <img src={backCard} alt="card" />
+          </div>
         </div>
       );
     }
